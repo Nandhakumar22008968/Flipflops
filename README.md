@@ -43,14 +43,53 @@ In T flip flop, "T" defines the term "Toggle". In SR Flip Flop, we provide only 
 
 
 ## Program:
+~~~
+1.SR Flipflop
+module srf(s,r,clk,q,qbar);
+input s,r,clk;
+output reg q;
+output qbar;
+always@(posedge clk)
+begin 
+q= s|((~r)&q);
+end
+assign qbar=~q;
+endmodule 
 
+2.D Flipflop
+module Df(d,clk,q,qbar);
+input d,clk;
+output reg q;
+output qbar;
+always@(posedge clk)
+begin
+q=d;
+end
+assign  qbar=~q;
+endmodule 
 
 ## RTL Schematic:
+1.SR Flipflop
+![image](https://github.com/Nandhakumar22008968/Flipflops/assets/129037794/d36bc76a-629b-4bca-95b4-4058e3c39646)
+
+2.D Flipflop
+![Uploading image.png…]()
+
 
 
 
 
 ## Timing Diagram:
+1.SR Flipflop
+![image](https://github.com/Nandhakumar22008968/Flipflops/assets/129037794/d1b92053-dda7-4c28-8f66-6e93032d338b)
+
+2.D Flipflop
+
+
+
+
+
+
 
 
 
