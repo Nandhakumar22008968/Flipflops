@@ -43,8 +43,8 @@ In T flip flop, "T" defines the term "Toggle". In SR Flip Flop, we provide only 
 
 
 ## Program:
-~~~
 1.SR Flipflop
+~~~
 module srf(s,r,clk,q,qbar);
 input s,r,clk;
 output reg q;
@@ -57,6 +57,7 @@ assign qbar=~q;
 endmodule 
 
 2.D Flipflop
+
 module Df(d,clk,q,qbar);
 input d,clk;
 output reg q;
@@ -68,14 +69,47 @@ end
 assign  qbar=~q;
 endmodule 
 
+3.JK flip flop
+module jk(j,k,clk,q,qbar);
+input j,k,clk;
+output q,qbar;
+reg q,qbar;
+always @(posedge clk)
+begin 
+q<=(j&~q)|(~k&q);
+qbar<=~q;
+end
+endmodule
+
+4.T flip flop
+module t(t,clk,q,qbar);
+input t,clk;
+output reg q;
+output qbar;
+always@(posedge clk)
+begin
+q=((~q)&t)|(q&(~t));
+end
+assign qbar=~q;
+endmodule 
+~~~
 ## RTL Schematic:
+
 1.SR Flipflop
+
 ![image](https://github.com/Nandhakumar22008968/Flipflops/assets/129037794/d36bc76a-629b-4bca-95b4-4058e3c39646)
 
 2.D Flipflop
-![Uploading image.png…]()
 
+![rtl dff](https://github.com/Nandhakumar22008968/Flipflops/assets/129037794/16806a58-ea2c-4af7-a3b6-e7583291da35)
 
+3.JK flip flop
+
+![Screenshot 2023-06-08 101714](https://github.com/Nandhakumar22008968/Flipflops/assets/129037794/a6b1751a-d6cd-41d8-a940-eb49097a9a73)
+
+4.T flip flop
+
+![Screenshot 2023-06-08 110024](https://github.com/Nandhakumar22008968/Flipflops/assets/129037794/e9be5faf-a8f3-452a-8d05-9a1f3e92f767)
 
 
 
@@ -84,9 +118,13 @@ endmodule
 ![image](https://github.com/Nandhakumar22008968/Flipflops/assets/129037794/d1b92053-dda7-4c28-8f66-6e93032d338b)
 
 2.D Flipflop
+![Screenshot 2023-06-08 104449](https://github.com/Nandhakumar22008968/Flipflops/assets/129037794/ea673bb0-f879-414e-96de-f087bd11b7df)
 
+3.JK flip flop
+![Screenshot 2023-06-08 103218](https://github.com/Nandhakumar22008968/Flipflops/assets/129037794/88f29b5a-f1c5-4855-97e7-fb03c8e01f4a)
 
-
+4.T flip flop
+![Screenshot 2023-06-08 110205](https://github.com/Nandhakumar22008968/Flipflops/assets/129037794/b0a1655c-f2fe-4dc1-bae1-7821e0ea177a)
 
 
 
